@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Tutam</title>
+<meta name="description" content="Tutam collects no data. It has no account, no analytics, and no network permission — your financial records never leave your phone.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg viewBox="0 0 108 108" role="img" aria-label="Tutam">
+    <rect width="108" height="108" fill="#211E1B"/>
+    <circle cx="47" cy="40" r="8.5" fill="#E9A13C"/>
+    <circle cx="69" cy="51" r="5.5" fill="#E9A13C"/>
+    <circle cx="55" cy="66" r="6.5" fill="#E9A13C"/>
+    <circle cx="37" cy="61" r="4" fill="#E9A13C"/>
+  </svg>
+  <div>
+    <h1>Privacy Policy</h1>
+    <p>Tutam — personal finance tracker</p>
+  </div>
+</header>
+
+<p class="lede"><strong>Tutam collects nothing.</strong> There is no account, no sign-up,
+no analytics, no advertising, and no crash reporting. The Android release does not
+request the <code>INTERNET</code> permission at all, so the app is technically incapable
+of transmitting your data anywhere.</p>
+
+<p class="updated">Last updated: 1 September 2026</p>
+
+<h2>What we collect</h2>
+<p>Nothing. We — the developer of Tutam — receive no information about you or your use
+of the app. We cannot see your transactions, balances, templates, targets, borrows or
+reminders. No identifier, advertising ID, device fingerprint, location or diagnostic
+report is gathered, transmitted or stored by us.</p>
+
+<h2>What the app stores, and where</h2>
+<p>Everything you enter is written to a database in Tutam's private storage area on your
+device, which no other app can read. Specifically:</p>
+<table>
+  <tr><th>Data</th><th>Where it lives</th></tr>
+  <tr><td>Transactions, templates, categories, targets, borrows, reminders, calculator history</td><td>Local database in the app's private storage</td></tr>
+  <tr><td>Settings (currency, language, theme)</td><td>Same local database</td></tr>
+  <tr><td>App-lock PIN</td><td>Stored only as a salted PBKDF2-SHA256 hash, in Android's hardware-backed Keystore. The PIN itself is never written anywhere, and never appears in a backup file.</td></tr>
+  <tr><td>Fingerprint / face unlock</td><td>Handled entirely by Android. Tutam receives only a yes/no result and never has access to your biometric data.</td></tr>
+</table>
+<p>Uninstalling the app deletes all of it.</p>
+
+<h2>Android Auto Backup is switched off</h2>
+<p>By default Android copies an app's data to the user's Google Drive. Tutam disables this
+deliberately, for both cloud backup and direct device-to-device transfer, so your financial
+database is never uploaded anywhere without you asking for it.</p>
+
+<h2>Exporting your data</h2>
+<p>Settings → Export data writes a backup file and hands it to Android's share sheet. This
+is the only path by which your data can leave the device, and it happens only when you
+choose it, to the destination you pick. You may protect the file with a passphrase, in
+which case it is encrypted with AES-256-GCM using a key derived by PBKDF2-HMAC-SHA256.
+The passphrase is never stored — if you lose it, that backup cannot be recovered by anyone,
+including us.</p>
+<p>Once you have shared an export, whatever you sent it to (a messaging app, a cloud drive,
+your email) is governed by that service's own privacy policy, not this one.</p>
+
+<h2>Permissions the app requests, and why</h2>
+<table>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Shows the reminders you create. Requested only when you save your first reminder, and the app works fully without it.</td></tr>
+  <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Re-registers your scheduled reminders after the phone restarts, so they are not silently lost.</td></tr>
+  <tr><td><code>USE_BIOMETRIC</code></td><td>Shows the system fingerprint/face prompt if you turn on the app lock.</td></tr>
+  <tr><td><code>VIBRATE</code></td><td>Haptic feedback when logging from the home-screen widget.</td></tr>
+  <tr><td><code>BIND_NOTIFICATION_LISTENER_SERVICE</code></td><td>Lets Android deliver Google Wallet's payment notifications to Tutam, so spends can be captured without retyping them. Off by default and separately granted by you; see the section below.</td></tr>
+  <tr><td><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Required by the Android scheduling library used to deliver reminders on time. Not used for anything else.</td></tr>
+</table>
+<p>There is no <code>INTERNET</code> permission and no location, contacts, camera,
+microphone or storage permission.</p>
+
+<h2>Notification access, and automatic spend capture</h2>
+<p>Tutam can read notifications so it can record what you spend with Google Wallet without
+you typing it in. This feature is <strong>off by default</strong>. It does nothing at all
+unless you turn it on in Settings <em>and</em> separately grant notification access on
+Android's own system screen, and you can revoke either at any time.</p>
+<p>When it is on:</p>
+<ul>
+  <li><strong>Only Google Wallet's notifications are read.</strong> The app checks the
+  originating package before anything is read or written, so notifications from your
+  messages, email, banking apps or anything else are never examined and never stored.</li>
+  <li><strong>Only the amount, currency and merchant name are kept.</strong> These are used
+  to build a suggested entry.</li>
+  <li><strong>Nothing is added to your records automatically.</strong> A detected spend
+  waits on the Home screen until you confirm it. You can edit it, categorise it, or dismiss
+  it. (If you explicitly ask Tutam to stop asking about a particular shop, it will record
+  that shop's purchases directly — you choose this per shop, and can undo it in Settings.)</li>
+  <li><strong>The notification text is deleted</strong> as soon as you confirm or dismiss
+  the entry. It is never included in an exported backup.</li>
+  <li><strong>Nothing is transmitted.</strong> As above, Tutam has no
+  <code>INTERNET</code> permission, so notification content cannot leave your device even
+  in principle. It is not sent to us, to any analytics service, or to anyone else — we
+  never see it.</li>
+</ul>
+<p>Turning the feature off in Settings deletes the pending entries and stops anything
+further from being read. To also withdraw the system permission, switch Tutam off under
+Android's <em>Notification access</em> settings.</p>
+
+<h2>Children</h2>
+<p>Tutam is a general-purpose budgeting tool and is not directed at children. Because it
+collects no data at all, it collects no data from children either.</p>
+
+<h2>Your rights</h2>
+<p>Regulations such as the GDPR grant you rights of access, correction, erasure and
+portability over personal data held by a company. We hold none of your data, so there is
+nothing for us to disclose or erase. You exercise these rights directly and completely:
+your data is on your device, editable and deletable in the app, exportable through
+Settings → Export data, and destroyed entirely by uninstalling.</p>
+
+<h2>Changes to this policy</h2>
+<p>If a future version of Tutam adds a feature that changes any of the above, this page
+will be updated before that version is released, and the change will be described in the
+release notes on Google Play.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:apptutam@gmail.com">apptutam@gmail.com</a></p>
+
+<footer>
+  Tutam is developed by Elchin Bayramli.
+</footer>
+
+</div>
+</body>
+</html>

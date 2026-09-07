@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutam — local-first finance tracker</title>
+<meta name="description" content="Tutam is a local-first personal finance tracker built around one-tap logging. No account, no sync, no network permission.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg viewBox="0 0 108 108" role="img" aria-label="Tutam">
+    <rect width="108" height="108" fill="#211E1B"/>
+    <circle cx="47" cy="40" r="8.5" fill="#E9A13C"/>
+    <circle cx="69" cy="51" r="5.5" fill="#E9A13C"/>
+    <circle cx="55" cy="66" r="6.5" fill="#E9A13C"/>
+    <circle cx="37" cy="61" r="4" fill="#E9A13C"/>
+  </svg>
+  <div>
+    <h1>Tutam</h1>
+    <p>Local-first personal finance tracker for Android</p>
+  </div>
+</header>
+
+<p class="lede">Logging an expense should take one tap, not a form. Tutam is built around
+templates for the things you buy every day — and everything stays on your phone.</p>
+
+<h2>Why it's different</h2>
+<ul>
+  <li><strong>One tap to log.</strong> Tap “Coffee”, done. From the app or the home-screen widget.</li>
+  <li><strong>Or no taps at all.</strong> Pay with Google Wallet and Tutam can read the amount and merchant from the payment notification, then wait on your home screen for you to confirm it.</li>
+  <li><strong>No account, ever.</strong> Nothing to sign up for. Start logging the second it opens.</li>
+  <li><strong>No network permission.</strong> The release build does not request <code>INTERNET</code>, so your records cannot leave the device.</li>
+  <li><strong>Yours to take.</strong> Full backups (optionally encrypted), CSV export, and automatic encrypted snapshots to a folder you pick.</li>
+  <li><strong>Four languages.</strong> English, Azərbaycanca, Türkçe, Русский.</li>
+</ul>
+
+<h2>What's inside</h2>
+<ul>
+  <li>Monthly targets with a pace indicator, and per-category budgets with live progress</li>
+  <li>Spending by category, income vs expense, an activity heatmap, and every period compared against the one before</li>
+  <li>Reminders that arrive as notifications with Log and Snooze buttons</li>
+  <li>Recurring entries for rent, salary and subscriptions</li>
+  <li>A searchable history with undo, and a cash-or-card tag on every entry</li>
+  <li>Track what you lent and what you borrowed, and settle it later</li>
+  <li>Optional biometric lock</li>
+</ul>
+
+<h2>Automatic capture, and what it reads</h2>
+<p>Capture is off until you turn it on. Tutam explains what it will read before Android's
+notification access screen appears, and it reads notifications from the <strong>Google Wallet
+app only</strong> — enforced in code, not merely promised. The notification text is erased as
+soon as you confirm or dismiss the entry. Tutam has no internet permission, so none of it can
+leave your phone. The <a href="privacy/">privacy policy</a> covers this in full.</p>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="privacy/">Privacy policy</a></li>
+</ul>
+
+<footer>Tutam is developed by Elchin Bayramli.</footer>
+
+</div>
+</body>
+</html>

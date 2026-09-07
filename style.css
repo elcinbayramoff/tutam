@@ -1,0 +1,56 @@
+/* Shared styling for the Tutam GitHub Pages site. Brand tokens mirror
+   android/app/src/main/res/values/colors.xml and lib/core/theme/app_theme.dart —
+   ink ground, saffron accent. Light and dark are both defined so the page
+   follows the reader's system setting. */
+:root {
+  color-scheme: light dark;
+  --ink: #211e1b;
+  --saffron: #e9a13c;
+  --bg: #fdf6f1;
+  --surface: #ffffff;
+  --text: #211e1b;
+  --muted: #6b625b;
+  --rule: #e6dcd4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171512;
+    --surface: #211e1b;
+    --text: #f3ece6;
+    --muted: #a9a09a;
+    --rule: #34302b;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0 20px 80px;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+header { display: flex; align-items: center; gap: 14px; padding: 40px 0 28px; }
+header svg { width: 52px; height: 52px; border-radius: 12px; flex: none; }
+header h1 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+header p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+h2 { margin: 34px 0 10px; font-size: 19px; letter-spacing: -0.01em; }
+h2:first-of-type { margin-top: 26px; }
+p, li { color: var(--text); }
+a { color: #9a6b16; }
+@media (prefers-color-scheme: dark) { a { color: var(--saffron); } }
+.lede {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--saffron);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 0 0 8px;
+}
+.updated { color: var(--muted); font-size: 14px; margin: 0 0 26px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+code { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 5px; font-size: 14px; }
+footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
